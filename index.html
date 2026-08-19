@@ -62,7 +62,7 @@ input, select {
 
 <h2>Solicitar Vaga</h2>
 
-<form onsubmit="enviarForm(event)">
+<form  onsubmit="enviarWhatsApp(event)">
 
 <!-- NOME -->
 <input type="text" placeholder="NOME COMPLETO" required>
@@ -206,9 +206,31 @@ function mostrarCursos() {
   }
 }
 
-function enviarForm(e) {
+function function enviarWhatsApp(e) {
   e.preventDefault();
-  alert("Cadastro enviado com sucesso!");
+
+  let nome = document.getElementById("nome").value;
+  let whatsapp = document.getElementById("whatsapp").value;
+  let curso = document.getElementById("curso").value;
+  let tipo = document.getElementById("tipo").value;
+  let subcurso = document.getElementById("subcurso").value;
+
+  let numeroDestino = "55SEUNUMEROAQUI";
+
+  let mensagem = 
+`*NOVO CADASTRO - INSTITUTO MIX*
+
+👤 Nome: ${nome}
+📱 WhatsApp: ${whatsapp}
+📚 Curso Livre: ${curso}
+🎓 Interesse: ${tipo}
+📌 Subcurso: ${subcurso}
+
+🚀 Lead vindo do site`;
+
+  let url = `https://wa.me/${numeroDestino}?text=${encodeURIComponent(mensagem)}`;
+
+  window.open(url, "_blank");
 }
 </script>
 
