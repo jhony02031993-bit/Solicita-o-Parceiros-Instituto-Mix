@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Instituto Mix - Oportunidades</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fff;
+}
+
+.hero {
+  background: linear-gradient(135deg, #ff6a00, #ff9900);
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.btn {
+  background: #ff0000;
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.hidden {
+  display: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+  <h1>Profissões que moldam seu destino</h1>
+  <p>Vagas limitadas • Garanta sua oportunidade</p>
+  <button class="btn" onclick="scrollToForm()">QUERO MINHA VAGA</button>
+</div>
+
+<div class="container" id="formulario">
+
+<h2>Solicitar Vaga</h2>
+
+<form onsubmit="enviarForm(event)">
+
+<!-- NOME -->
+<input type="text" placeholder="NOME COMPLETO" required>
+
+<!-- WHATSAPP -->
+<input type="text" placeholder="CONTATO WHATSAPP" required>
+
+<!-- CURSOS GRATUITOS -->
+<label>CURSO GRATUITO</label>
+
+<select required>
+<option value="">Escolha um curso</option>
+
+<!-- (EXATAMENTE COMO VOCÊ ENVIOU) -->
+<optgroup label="Cursos Livres">
+<option>ADMINISTRAÇÃO EXPERT</option>
+<option>ATENDIMENTO AO CLIENTE</option>
+<option>CAMAREIRA</option>
+<option>CANVA</option>
+<option>COZINHA FUNCIONAL</option>
+<option>SEGURANÇA CIBERNÉTICA</option>
+<option>DECORAÇÃO DE EVENTOS</option>
+<option>EXCEL 365</option>
+<option>EXCEL DESCOMPLICADO</option>
+<option>FUTURO CAMPEÃO</option>
+<option>GANHE DINHEIRO COM A ÁREA DA BELEZA</option>
+<option>GANHE DINHEIRO COM A ÁREA DA CONSTRUÇÃO CIVIL</option>
+<option>GASTRONOMIA DE MÃO CHEIA</option>
+<option>GESTÃO DE PESSOAS</option>
+<option>I SPEAK</option>
+<option>INFORMÁTICA EXPERIENCE</option>
+<option>INFORMÁTICA PARA MICROEMPREENDEDOR</option>
+<option>INTERNET</option>
+<option>JAVA MOD I</option>
+<option>MARKETING DIGITAL</option>
+<option>MARKETING PESSOAL</option>
+<option>PREPARAÇÃO PROFISSIONAL</option>
+<option>PRIMEIRO EMPREGO</option>
+<option>RECEPCIONISTA DE HOTEL</option>
+<option>SAÚDE MENTAL E BEM-ESTAR EMOCIONAL</option>
+<option>TIKTOKER</option>
+<option>MARKETING DIGITAL - EAD</option>
+<option>DIGITAL INFLUENCER - COMO GERAR CONTEÚDO</option>
+<option>INTELIGÊNCIA ARTIFICIAL</option>
+<option>CRIAÇÃO DE ARTES E DESIGN COM IA</option>
+<option>INTENSIVO BARBEARIA PROFISSIONAL</option>
+<option>INTENSIVO AUXILIAR DE FARMÁCIA E DROGARIA</option>
+<option>INTENSIVO EM GESTÃO DE MÍDIAS</option>
+<option>INTENSIVO AUXILIAR VETERINÁRIO E PETSHOP</option>
+<option>INTENSIVO CHEF PROFISSIONAL</option>
+<option>INTENSIVO GESTÃO PESSOAL E PROFISSIONAL</option>
+<option>INTENSIVO MAQUIAGEM PROFISSIONAL</option>
+<option>INTENSIVO YOUTUBER</option>
+<option>MAQUIAGEM: DIURNA E NOTURNA</option>
+<option>INTENSIVO MARKETING DIGITAL - BÁSICO</option>
+<option>INTENSIVO FREE FLIGHT - INGLÊS</option>
+<option>EU EMPREENDEDOR</option>
+</optgroup>
+
+</select>
+
+<!-- ESCOLHA DE BOLSA -->
+<label>SE EU GANHAR UMA BOLSA EU FARIA:</label>
+
+<select id="tipo" onchange="mostrarCursos()" required>
+<option value="">Selecione</option>
+<option value="bacharel">BACHARELADO</option>
+<option value="licenciatura">LICENCIATURA</option>
+<option value="tecnologo">TECNÓLOGO</option>
+<option value="tecnico">TÉCNICO</option>
+<option value="proeja">PROEJA</option>
+</select>
+
+<!-- SUBCURSOS -->
+<select id="subcurso" class="hidden"></select>
+
+<button class="btn">SOLICITAR VAGA</button>
+
+</form>
+
+</div>
+
+<script>
+function scrollToForm() {
+  document.getElementById("formulario").scrollIntoView({behavior:"smooth"});
+}
+
+function mostrarCursos() {
+  let tipo = document.getElementById("tipo").value;
+  let sub = document.getElementById("subcurso");
+
+  sub.innerHTML = "";
+  sub.classList.remove("hidden");
+
+  let dados = {
+
+    bacharel: [
+"Administração","Ciências Contábeis","Ciências da Computação","Ciências Econômicas",
+"Educação Física - Bacharelado","Engenharia Ambiental","Engenharia Civil",
+"Engenharia de Computação","Engenharia de Controle e Automação","Engenharia de Produção",
+"Engenharia de Software","Engenharia Elétrica","Engenharia Mecatrônica",
+"Engenharia Mecânica","Sistemas de Informação","Arquitetura e Urbanismo","Agronomia"
+    ],
+
+    licenciatura: [
+"Artes","Educação Especial","Geografia","História",
+"Letras - Língua Portuguesa e Libras","Letras - Português e Inglês",
+"Matemática","Pedagogia","Ciências Biológicas","Educação Física - Licenciatura"
+    ],
+
+    tecnologo: [
+"Análise e Desenvolvimento de Sistemas","Automação Industrial","Banco de Dados",
+"Controle de Obras","Design Gráfico","Energias Renováveis","Estética e Cosmética",
+"Fabricação Mecânica","Gastronomia","Gestão Ambiental","Gestão Comercial",
+"Gestão da Produção Industrial","Gestão da Qualidade",
+"Gestão de Qualidade na Saúde","Gestão de Recursos Humanos",
+"Gestão Financeira","Gestão Hospitalar","Logística","Marketing",
+"Marketing Digital","Mecatrônica Industrial","Processos Escolares",
+"Processos Gerenciais","Redes de Computadores",
+"Segurança no Trabalho","Segurança no Trânsito","Serviços Jurídicos"
+    ],
+
+    tecnico: [
+"ASB - Auxiliar de Saúde Bucal"
+    ],
+
+    proeja: [
+"Ensino Fundamental",
+"Ensino Médio - 1º, 2º e 3º anos",
+"Ensino Médio - 2º e 3º anos",
+"Ensino Médio - 3º ano"
+    ]
+  };
+
+  if (dados[tipo]) {
+    dados[tipo].forEach(item => {
+      let opt = document.createElement("option");
+      opt.text = item;
+      sub.add(opt);
+    });
+  }
+}
+
+function enviarForm(e) {
+  e.preventDefault();
+  alert("Cadastro enviado com sucesso!");
+}
+</script>
+
+</body>
+</html>
