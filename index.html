@@ -212,11 +212,17 @@ button:hover {
   </div>
 </div>
 
-<!-- HERO -->
-<div class="hero">
-  <h1>CURSOS GRATUITOS + BOLSAS DE ESTUDO</h1>
-  <p class="urgencia">Inscrições em 48h</p>
-</div>
+<script>
+window.onload = function () {
+  document.getElementById("modalAviso").style.display = "flex";
+  document.body.style.overflow = "hidden";
+};
+
+function fecharModal(){
+  document.getElementById("modalAviso").style.display = "none";
+  document.body.style.overflow = "auto";
+}
+</script>
 
 <div class="container">
 
