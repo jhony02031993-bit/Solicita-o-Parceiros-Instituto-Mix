@@ -25,7 +25,7 @@ body {
   padding: 70px 20px;
 }
 
-.hero h1 { font-size: 30px; font-weight: 700; }
+.hero h1 { font-size: 28px; font-weight: 700; }
 
 .urgencia { color: #ffcc00; font-weight: bold; }
 
@@ -102,14 +102,14 @@ button {
 
 <body>
 
-<!-- ✔ HERO ADICIONADO (RESOLVE O “TOPO SUMIDO”) -->
+<!-- HERO -->
 <div class="hero">
-  <h1>Parabéns por chegar até aqui sua oportunidade só depende de um passo rápido! CADASTRE-SE ABAIXO</h1>
-  <p class="urgencia">Oportunidade exclusiva e limitada</p>
-  <p class="urgencia">Após o cadastro você tem 48 horas para inscrição</p>
+  <h1>Você foi selecionado para uma oportunidade exclusiva de formação profissional</h1>
+  <p class="urgencia">Vagas limitadas • Cadastro com análise imediata</p>
+  <p class="urgencia">Você tem até 48 horas após o cadastro para confirmar sua vaga</p>
 </div>
 
-<!-- MODAL -->
+<!-- MODAL (CORRIGIDO E FECHADO CORRETAMENTE) -->
 <div id="modalAviso" class="modal">
   <div class="modal-box">
 
@@ -124,40 +124,30 @@ button {
 
     <div style="background:#f5f5f5; padding:12px; border-radius:10px; margin:15px 0;">
       <p style="margin:0; font-size:14px; text-align:center;">
-        A iniciativa é <strong style="color:#e60000;">100% gratuita</strong> devido a uma parceria institucional que viabiliza o custeio das vagas.
+        A iniciativa é <strong style="color:#e60000;">100% gratuita</strong> devido a uma parceria institucional.
       </p>
     </div>
 
     <div style="margin:15px 0; font-size:14px;">
-      <p>✔ <strong>Exclusivo</strong> para moradores de Flores da Cunha - RS</p>
-      <p>✔ É confiável? SIM! Ministrada em escola com mais de 11 anos de história</p>
-      <p>✔ Atendimento direto via <strong>WhatsApp</strong>, sem cadastro em plataformas externas</p>
+      <p>✔ Exclusivo para moradores de Flores da Cunha - RS</p>
+      <p>✔ Instituição educacional com atuação consolidada na região</p>
+      <p>✔ Atendimento direto via WhatsApp</p>
     </div>
 
     <div style="background:#fff3f3; padding:10px; border-left:4px solid #e60000; border-radius:8px;">
       <p style="margin:0; font-size:13px; text-align:center;">
-        💡 Leia com atenção: esta oportunidade pode encerrar a qualquer momento devido à limitação de vagas.
+        💡 Esta oportunidade pode ser encerrada a qualquer momento.
       </p>
     </div>
 
     <button onclick="fecharModal()"
-      style="
-        margin-top:15px;
-        width:100%;
-        padding:14px;
-        background:linear-gradient(135deg,#ff0000,#ff4d4d);
-        color:white;
-        border:none;
-        border-radius:10px;
-        font-weight:bold;
-        font-size:16px;
-        cursor:pointer;
-        transition:0.3s;
-      ">
+      style="margin-top:15px; width:100%; padding:14px; background:linear-gradient(135deg,#ff0000,#ff4d4d); color:white; border:none; border-radius:10px; font-weight:bold; font-size:16px;">
       ENTENDI E QUERO CONTINUAR
     </button>
 
   </div>
+</div>
+
 <div class="container">
 
 <div class="info-box">
@@ -174,7 +164,7 @@ button {
 <select id="curso" required>
 <option value="">Curso Livre</option>
 
-<!-- ✔ TODOS OS SEUS CURSOS MANTIDOS INTACTOS -->
+<!-- 🔥 TODAS AS OPÇÕES 100% INTACTAS -->
 <option>ADMINISTRAÇÃO EXPERT</option>
 <option>ATENDIMENTO AO CLIENTE</option>
 <option>CAMAREIRA</option>
@@ -230,9 +220,9 @@ button {
 <option value="proeja">PROEJA</option>
 </select>
 
-<select id="subcurso"></select>
+<select id="subcurso" required></select>
 
-<button type="submit">QUERO MINHA VAGA</button>
+<button type="submit">GARANTIR MINHA VAGA AGORA</button>
 
 </form>
 
@@ -245,21 +235,20 @@ document.getElementById("modalAviso").style.display = "none";
 document.body.style.overflow = "auto";
 }
 
-/* ✔ MODAL NÃO BLOQUEIA MAIS A PÁGINA */
 document.addEventListener("DOMContentLoaded", function () {
 const modal = document.getElementById("modalAviso");
 if(modal){
 modal.style.display = "flex";
+document.body.style.overflow = "hidden";
 }
 });
 
-/* ✔ TODOS OS CURSOS MANTIDOS (SEM ALTERAÇÃO) */
 function mostrarCursos(){
 let tipo=document.getElementById("tipo").value;
 let sub=document.getElementById("subcurso");
-sub.innerHTML="";
+sub.innerHTML="<option value=''>Selecione uma opção</option>";
 
-let dados={
+let dados = {
 profissionalizante:[
 "Administração / Técnicas Administrativas",
 "Administração / Gestão de Pessoas e Lideranças",
@@ -367,7 +356,6 @@ proeja:[
 "Ensino Médio - 2º e 3º anos",
 "Ensino Médio - 3º ano"
 ]
-
 };
 
 if(dados[tipo]){
