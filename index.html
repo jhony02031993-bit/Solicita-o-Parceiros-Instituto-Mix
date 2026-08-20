@@ -87,12 +87,6 @@ button:hover {
   border-left: 5px solid #ff6a00;
 }
 
-.perda {
-  color:red;
-  font-weight:bold;
-  text-align:center;
-}
-
 /* ANIMAÇÃO */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(20px); }
@@ -162,7 +156,6 @@ button:hover {
   </div>
 </div>
 
-<!-- CONTEÚDO DO SITE -->
 <div class="container">
 
 <div class="info-box">
@@ -178,6 +171,7 @@ button:hover {
 
 <select id="curso" required>
 <option value="">Curso Livre</option>
+
 <option>ADMINISTRAÇÃO EXPERT</option>
 <option>ATENDIMENTO AO CLIENTE</option>
 <option>CAMAREIRA</option>
@@ -220,6 +214,7 @@ button:hover {
 <option>INTENSIVO MARKETING DIGITAL - BÁSICO</option>
 <option>INTENSIVO FREE FLIGHT - INGLÊS</option>
 <option>EU EMPREENDEDOR</option>
+
 </select>
 
 <select id="tipo" onchange="mostrarCursos()" required>
@@ -242,25 +237,23 @@ button:hover {
 
 <script>
 
-/* MODAL */
 function fecharModal(){
-  document.getElementById("modalAviso").style.display = "none";
-  document.body.style.overflow = "auto";
+document.getElementById("modalAviso").style.display = "none";
+document.body.style.overflow = "auto";
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  const modal = document.getElementById("modalAviso");
-  if (modal) {
-    modal.style.display = "flex";
-    document.body.style.overflow = "hidden";
-  }
+const modal = document.getElementById("modalAviso");
+if(modal){
+modal.style.display = "flex";
+document.body.style.overflow = "hidden";
+}
 });
 
-/* CURSOS */
+/* TODOS OS DADOS MANTIDOS 100% COMO ORIGINAL */
 function mostrarCursos(){
 let tipo=document.getElementById("tipo").value;
 let sub=document.getElementById("subcurso");
-
 sub.innerHTML="";
 
 let dados={
@@ -382,10 +375,8 @@ opt.text=i;
 sub.add(opt);
 });
 }
-
 }
 
-/* WHATSAPP */
 function enviarWhatsApp(e){
 e.preventDefault();
 
