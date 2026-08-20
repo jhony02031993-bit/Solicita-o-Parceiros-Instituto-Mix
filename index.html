@@ -1,388 +1,818 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OPORTUNIDADE DE EVOLUÇÃO</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <title>OPORTUNIDADE DE EVOLUÇÃO</title>
 
-<style>
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: #f4f4f4;
-}
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+    rel="stylesheet"
+  >
 
-/* HERO */
-.hero {
-  background:
-    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
-    url('./images/banner-cadastro.png');
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f4f4f4;
+    }
 
-  color: white;
-  text-align: center;
-  padding: 70px 20px;
-}
+    /* =========================
+       HERO
+    ========================= */
 
-.hero h1 { font-size: 28px; font-weight: 700; }
+    .hero {
+      background:
+        linear-gradient(
+          rgba(0, 0, 0, 0.35),
+          rgba(0, 0, 0, 0.35)
+        ),
+        url('./images/banner-cadastro.png');
 
-.urgencia { color: #ffcc00; font-weight: bold; }
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
 
-/* CONTAINER */
-.container {
-  max-width: 900px;
-  margin: auto;
-  padding: 20px;
-  margin-top: -40px;
-}
+      color: white;
+      text-align: center;
+      padding: 70px 20px;
+    }
 
-/* FORM */
-form {
-  background: white;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-}
+    .hero h1 {
+      font-size: 28px;
+      font-weight: 700;
+      margin: 0 0 15px;
+    }
 
-input, select {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-}
+    .urgencia {
+      color: #ffcc00;
+      font-weight: bold;
+      margin: 8px 0;
+    }
 
-/* BOTÃO */
-button {
-  width: 100%;
-  padding: 16px;
-  background: linear-gradient(135deg, #ff0000, #ff4d4d);
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-  border-radius: 8px;
-  font-size: 16px;
-}
+    /* =========================
+       CONTAINER
+    ========================= */
 
-/* INFO */
-.info-box {
-  background: white;
-  padding: 18px;
-  margin-bottom: 15px;
-  border-radius: 10px;
-  font-size: 14px;
-  border-left: 5px solid #ff6a00;
-}
+    .container {
+      width: 100%;
+      max-width: 900px;
+      margin: -40px auto 0;
+      padding: 20px;
+      position: relative;
+      z-index: 2;
+    }
 
-/* MODAL */
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.85);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 99999;
-}
+    /* =========================
+       INFO
+    ========================= */
 
-.modal-box {
-  background: white;
-  padding: 25px;
-  border-radius: 14px;
-  max-width: 600px;
-  width: 90%;
-}
-</style>
+    .info-box {
+      background: white;
+      padding: 18px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      font-size: 14px;
+      border-left: 5px solid #ff6a00;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    /* =========================
+       FORMULÁRIO
+    ========================= */
+
+    form {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    }
+
+    input,
+    select {
+      display: block;
+      width: 100%;
+      padding: 13px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      background: white;
+    }
+
+    input:focus,
+    select:focus {
+      outline: none;
+      border-color: #ff0000;
+      box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.08);
+    }
+
+    /* =========================
+       BOTÃO
+    ========================= */
+
+    button {
+      width: 100%;
+      padding: 16px;
+      margin-top: 10px;
+
+      background: linear-gradient(
+        135deg,
+        #ff0000,
+        #ff4d4d
+      );
+
+      color: white;
+      border: none;
+      cursor: pointer;
+
+      font-weight: bold;
+      border-radius: 8px;
+      font-size: 16px;
+      font-family: 'Poppins', sans-serif;
+
+      transition: 0.2s;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(255, 0, 0, 0.25);
+    }
+
+    /* =========================
+       MODAL
+    ========================= */
+
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 100%;
+
+      background: rgba(0, 0, 0, 0.85);
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      z-index: 99999;
+
+      padding: 20px;
+    }
+
+    .modal-box {
+      background: white;
+      padding: 25px;
+      border-radius: 14px;
+
+      max-width: 600px;
+      width: 100%;
+
+      max-height: 90vh;
+      overflow-y: auto;
+
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    .modal-box h2 {
+      color: #e60000;
+      font-size: 22px;
+      text-align: center;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    .modal-box p {
+      line-height: 1.6;
+    }
+
+    .modal-destaque {
+      background: #f5f5f5;
+      padding: 12px;
+      border-radius: 10px;
+      margin: 15px 0;
+    }
+
+    .modal-destaque p {
+      margin: 0;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .modal-lista {
+      margin: 15px 0;
+      font-size: 14px;
+    }
+
+    .modal-alerta {
+      background: #fff3f3;
+      padding: 10px;
+      border-left: 4px solid #e60000;
+      border-radius: 8px;
+    }
+
+    .modal-alerta p {
+      margin: 0;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    /* =========================
+       RESPONSIVO
+    ========================= */
+
+    @media (max-width: 768px) {
+
+      .hero {
+        padding: 50px 15px;
+        background-position: center;
+      }
+
+      .hero h1 {
+        font-size: 22px;
+        line-height: 1.3;
+      }
+
+      .urgencia {
+        font-size: 13px;
+      }
+
+      .container {
+        margin-top: -25px;
+        padding: 15px;
+      }
+
+      form {
+        padding: 18px;
+      }
+
+      .info-box {
+        font-size: 13px;
+      }
+
+      .modal-box {
+        padding: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+
+      .hero {
+        padding: 40px 12px;
+      }
+
+      .hero h1 {
+        font-size: 19px;
+      }
+
+      .urgencia {
+        font-size: 12px;
+      }
+
+      .container {
+        padding: 10px;
+      }
+
+      form {
+        padding: 15px;
+      }
+
+      input,
+      select {
+        padding: 12px;
+        font-size: 13px;
+      }
+
+      button {
+        font-size: 14px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- HERO -->
-<div class="hero">
-  <h1>Você foi selecionado para uma oportunidade exclusiva de formação profissional</h1>
-  <p class="urgencia">Vagas limitadas • Cadastro com análise imediata</p>
-  <p class="urgencia">Você tem até 48 horas após o cadastro para confirmar sua vaga</p>
-</div>
+  <!-- =========================
+       HERO
+  ========================= -->
 
-<!-- MODAL (CORRIGIDO E FECHADO CORRETAMENTE) -->
-<div id="modalAviso" class="modal">
-  <div class="modal-box">
+  <div class="hero">
 
-    <h2 style="color:#e60000; font-size:22px; text-align:center; margin-bottom:10px;">
-      ⚠️ AVISO IMPORTANTE
-    </h2>
+    <h1>
+      Você foi selecionado para uma oportunidade exclusiva de formação profissional
+    </h1>
 
-    <p style="font-size:14px; line-height:1.6; text-align:center;">
-      Esta é uma <strong>ação de inclusão educacional</strong>, criada para ampliar o acesso à
-      <strong>qualificação profissional e oportunidades reais de formação em cursos</strong>.
+    <p class="urgencia">
+      Vagas limitadas • Cadastro com análise imediata
     </p>
 
-    <div style="background:#f5f5f5; padding:12px; border-radius:10px; margin:15px 0;">
-      <p style="margin:0; font-size:14px; text-align:center;">
-        A iniciativa é <strong style="color:#e60000;">100% gratuita</strong> devido a uma parceria institucional.
-      </p>
-    </div>
-
-    <div style="margin:15px 0; font-size:14px;">
-      <p>✔ Exclusivo para moradores de Flores da Cunha - RS</p>
-      <p>✔ Instituição educacional com atuação consolidada na região</p>
-      <p>✔ Atendimento direto via WhatsApp</p>
-    </div>
-
-    <div style="background:#fff3f3; padding:10px; border-left:4px solid #e60000; border-radius:8px;">
-      <p style="margin:0; font-size:13px; text-align:center;">
-        💡 Esta oportunidade pode ser encerrada a qualquer momento.
-      </p>
-    </div>
-
-    <button onclick="fecharModal()"
-      style="margin-top:15px; width:100%; padding:14px; background:linear-gradient(135deg,#ff0000,#ff4d4d); color:white; border:none; border-radius:10px; font-weight:bold; font-size:16px;">
-      ENTENDI E QUERO CONTINUAR
-    </button>
+    <p class="urgencia">
+      Você tem até 48 horas após o cadastro para confirmar sua vaga
+    </p>
 
   </div>
-</div>
 
-<div class="container">
 
-<div class="info-box">
-✔ Mais de 2.000 alunos<br>
-✔ Certificado válido<br>
-✔ Presencial ou EAD
-</div>
+  <!-- =========================
+       MODAL
+  ========================= -->
 
-<form onsubmit="enviarWhatsApp(event)">
+  <div id="modalAviso" class="modal">
 
-<input id="nome" placeholder="Nome" required>
-<input id="whatsapp" placeholder="WhatsApp" required>
+    <div class="modal-box">
 
-<select id="curso" required>
-<option value="">Curso Livre</option>
+      <h2>
+        ⚠️ AVISO IMPORTANTE
+      </h2>
 
-<!-- 🔥 TODAS AS OPÇÕES 100% INTACTAS -->
-<option>ADMINISTRAÇÃO EXPERT</option>
-<option>ATENDIMENTO AO CLIENTE</option>
-<option>CAMAREIRA</option>
-<option>CANVA</option>
-<option>COZINHA FUNCIONAL</option>
-<option>SEGURANÇA CIBERNÉTICA</option>
-<option>DECORAÇÃO DE EVENTOS</option>
-<option>EXCEL 365</option>
-<option>EXCEL DESCOMPLICADO</option>
-<option>FUTURO CAMPEÃO</option>
-<option>GANHE DINHEIRO COM A ÁREA DA BELEZA</option>
-<option>GANHE DINHEIRO COM A ÁREA DA CONSTRUÇÃO CIVIL</option>
-<option>GASTRONOMIA DE MÃO CHEIA</option>
-<option>GESTÃO DE PESSOAS</option>
-<option>I SPEAK</option>
-<option>INFORMÁTICA EXPERIENCE</option>
-<option>INFORMÁTICA PARA MICROEMPREENDEDOR</option>
-<option>INTERNET</option>
-<option>JAVA MOD I</option>
-<option>MARKETING DIGITAL</option>
-<option>MARKETING PESSOAL</option>
-<option>PREPARAÇÃO PROFISSIONAL</option>
-<option>PRIMEIRO EMPREGO</option>
-<option>RECEPCIONISTA DE HOTEL</option>
-<option>SAÚDE MENTAL E BEM-ESTAR EMOCIONAL</option>
-<option>TIKTOKER</option>
-<option>MARKETING DIGITAL - EAD</option>
-<option>DIGITAL INFLUENCER - COMO GERAR CONTEÚDO</option>
-<option>INTELIGÊNCIA ARTIFICIAL</option>
-<option>CRIAÇÃO DE ARTES E DESIGN COM IA</option>
-<option>INTENSIVO BARBEARIA PROFISSIONAL</option>
-<option>INTENSIVO AUXILIAR DE FARMÁCIA E DROGARIA</option>
-<option>INTENSIVO EM GESTÃO DE MÍDIAS</option>
-<option>INTENSIVO AUXILIAR VETERINÁRIO E PETSHOP</option>
-<option>INTENSIVO CHEF PROFISSIONAL</option>
-<option>INTENSIVO GESTÃO PESSOAL E PROFISSIONAL</option>
-<option>INTENSIVO MAQUIAGEM PROFISSIONAL</option>
-<option>INTENSIVO YOUTUBER</option>
-<option>MAQUIAGEM: DIURNA E NOTURNA</option>
-<option>INTENSIVO MARKETING DIGITAL - BÁSICO</option>
-<option>INTENSIVO FREE FLIGHT - INGLÊS</option>
-<option>EU EMPREENDEDOR</option>
+      <p style="font-size:14px; text-align:center;">
+        Esta é uma
+        <strong>ação de inclusão educacional</strong>,
+        criada para ampliar o acesso à
+        <strong>
+          qualificação profissional e oportunidades reais de formação em cursos
+        </strong>.
+      </p>
 
-</select>
+      <div class="modal-destaque">
 
-<select id="tipo" onchange="mostrarCursos()" required>
-<option value="">Tipo de Bolsa</option>
-<option value="profissionalizante">PROFISSIONALIZANTE</option>
-<option value="bacharel">BACHARELADO</option>
-<option value="licenciatura">LICENCIATURA</option>
-<option value="tecnologo">TECNÓLOGO</option>
-<option value="tecnico">TÉCNICO</option>
-<option value="proeja">PROEJA</option>
-</select>
+        <p>
+          A iniciativa é
+          <strong style="color:#e60000;">
+            100% gratuita
+          </strong>
+          devido a uma parceria institucional.
+        </p>
 
-<select id="subcurso" required></select>
+      </div>
 
-<button type="submit">GARANTIR MINHA VAGA AGORA</button>
+      <div class="modal-lista">
 
-</form>
+        <p>✔ Exclusivo para moradores de Flores da Cunha - RS</p>
 
-</div>
+        <p>✔ Instituição educacional com atuação consolidada na região</p>
 
-<script>
+        <p>✔ Atendimento direto via WhatsApp</p>
 
-function fecharModal(){
-document.getElementById("modalAviso").style.display = "none";
-document.body.style.overflow = "auto";
-}
+      </div>
 
-document.addEventListener("DOMContentLoaded", function () {
-const modal = document.getElementById("modalAviso");
-if(modal){
-modal.style.display = "flex";
-document.body.style.overflow = "hidden";
-}
-});
+      <div class="modal-alerta">
 
-function mostrarCursos(){
-let tipo=document.getElementById("tipo").value;
-let sub=document.getElementById("subcurso");
-sub.innerHTML="<option value=''>Selecione uma opção</option>";
+        <p>
+          💡 Esta oportunidade pode ser encerrada a qualquer momento.
+        </p>
 
-let dados = {
-profissionalizante:[
-"Administração / Técnicas Administrativas",
-"Administração / Gestão de Pessoas e Lideranças",
-"Administração / Dicção, Desinibição e Oratória + Comunicação Assertiva",
-"Administração / Auxiliar Administrativo e Financeiro",
-"Administração / ASSISTENTE DE MARKETING 7",
-"Administração / ASSISTENTE DE RH 7",
-"Administração / ASSISTENTE FINANCEIRO",
-"Administração / Gestão empresarial e educação financeira",
-"Administração / Negócios",
-"Administração / Atendimento ao Público e Vendas",
-"Administração / Vendas",
-"Tecnologia / Informática",
-"Tecnologia / Concerto de Celulares",
-"Tecnologia / Manutenção de Computadores",
-"Tecnologia / Designer Gráfico",
-"Tecnologia / Programação",
-"Tecnologia / Projetista",
-"Tecnologia / Marketing Digital",
-"Tecnologia / Editor de Vídeos",
-"Tecnologia / Excel",
-"Tecnologia / Power BI",
-"Tecnologia / Social Media",
-"Tecnologia / E-commerce",
-"Tecnologia / Fotografia",
-"Tecnologia / Digital Influencer",
-"Tecnologia / Canva",
-"Beleza / Cabeleireiro Profissional",
-"Beleza / Maquiagem Especilista no Olhar",
-"Beleza / Designer de Sobrancelhas",
-"Beleza / Extensão de Cílios",
-"Beleza / Manicure e Pedicure",
-"Beleza / Alongamento de Unhas",
-"Moda / Corte e Costura",
-"Moda / Modelagem",
-"Gastronomia / Culinária",
-"Gastronomia / Confeitaria",
-"Gastronomia / Biscoitos",
-"Gastronomia / Pizzaiolo",
-"Gastronomia / Salgadeiro",
-"Gastronomia / Panificação",
-"Gastronomia / Cozinha Funcional",
-"Gastronomia / Chef Vegano",
-"Gastronomia / Barman e Bartender",
-"Saúde / Massagem Profissional",
-"Saúde / Atendente de Farmácia e Drogaria",
-"Saúde / Assistente de Laboratório e Análises",
-"Saúde / Cuidador de Idosos",
-"Saúde / Saúde Mental e Bem-estar emocional",
-"Saúde / Biossegurança em Saúde",
-"Saúde / Primeiros Socorros",
-"Construção Civil / Eletricista Predial e Residencial",
-"Construção Civil / Mestre de Obras",
-"Construção Civil / Instalação e Manutenção de Ar Condicionado",
-"Construção Civil / NR10",
-"Construção Civil / NR18",
-"Construção Civil / Eletricista e Instalador Predial",
-"Construção Civil / Reciclagem NR 06 e NR 10",
-"Indústria e Mecânica / Soldador",
-"Indústria e Mecânica / Leitura e Interpretação de Desenhos - LID",
-"Idiomas / Inglês",
-"Idiomas / Italiano",
-"Idiomas / Libras",
-"Área de Casa e Conforto / Personal Organizer",
-"Turismo e Hotelaria / Camareira",
-"Turismo e Hotelaria / Recepcionista de Hotel",
-"Turismo e Hotelaria / Decoração de Eventos",
-"Turismo e Hotelaria / Garçom e Maitre",
-"Turismo e Hotelaria / Agente de Viagens",
-"Turismo e Hotelaria / Cerimonialista",
-"Área de Serviços / Gestor de Posto de Combustível"
-],
+      </div>
 
-bacharel:[
-"Administração","Ciências Contábeis","Ciências da Computação","Ciências Econômicas",
-"Educação Física - Bacharelado","Engenharia Ambiental","Engenharia Civil",
-"Engenharia de Computação","Engenharia de Controle e Automação","Engenharia de Produção",
-"Engenharia de Software","Engenharia Elétrica","Engenharia Mecatrônica","Engenharia Mecânica",
-"Sistemas de Informação","Arquitetura e Urbanismo","Agronomia"
-],
+      <button
+        type="button"
+        onclick="fecharModal()"
+      >
+        ENTENDI E QUERO CONTINUAR
+      </button>
 
-licenciatura:[
-"Artes","Educação Especial","Geografia","História",
-"Letras - Português e Libras","Letras - Português e Inglês",
-"Matemática","Pedagogia","Ciências Biológicas","Educação Física - Licenciatura"
-],
+    </div>
 
-tecnologo:[
-"Análise e Desenvolvimento de Sistemas","Automação Industrial","Banco de Dados",
-"Controle de Obras","Design Gráfico","Energias Renováveis","Estética e Cosmética",
-"Fabricação Mecânica","Gastronomia","Gestão Ambiental","Gestão Comercial",
-"Gestão da Produção Industrial","Gestão da Qualidade","Gestão de Recursos Humanos",
-"Gestão Financeira","Gestão Hospitalar","Logística","Marketing","Marketing Digital",
-"Mecatrônica Industrial","Processos Escolares","Processos Gerenciais","Redes de Computadores",
-"Segurança no Trabalho","Segurança no Trânsito","Serviços Jurídicos"
-],
+  </div>
 
-tecnico:[
-"ASB - Auxiliar de Saúde Bucal"
-],
 
-proeja:[
-"Ensino Fundamental",
-"Ensino Médio - 1º, 2º e 3º anos",
-"Ensino Médio - 2º e 3º anos",
-"Ensino Médio - 3º ano"
-]
-};
+  <!-- =========================
+       CONTEÚDO
+  ========================= -->
 
-if(dados[tipo]){
-dados[tipo].forEach(i=>{
-let opt=document.createElement("option");
-opt.text=i;
-sub.add(opt);
-});
-}
-}
+  <div class="container">
 
-function enviarWhatsApp(e){
-e.preventDefault();
+    <div class="info-box">
 
-let nome=document.getElementById("nome").value;
-let whatsapp=document.getElementById("whatsapp").value;
-let curso=document.getElementById("curso").value;
-let tipo=document.getElementById("tipo").value;
-let subcurso=document.getElementById("subcurso").value;
+      ✔ Mais de 2.000 alunos<br>
+      ✔ Certificado válido<br>
+      ✔ Presencial ou EAD
 
-let numero="5554992713996";
+    </div>
 
-let msg=`NOVO CADASTRO
+
+    <!-- =========================
+         FORMULÁRIO
+    ========================= -->
+
+    <form onsubmit="enviarWhatsApp(event)">
+
+      <input
+        id="nome"
+        type="text"
+        placeholder="Nome"
+        autocomplete="name"
+        required
+      >
+
+      <input
+        id="whatsapp"
+        type="tel"
+        placeholder="WhatsApp"
+        autocomplete="tel"
+        required
+      >
+
+
+      <!-- CURSOS LIVRES -->
+
+      <select id="curso" required>
+
+        <option value="">
+          Curso Livre
+        </option>
+
+        <option>ADMINISTRAÇÃO EXPERT</option>
+        <option>ATENDIMENTO AO CLIENTE</option>
+        <option>CAMAREIRA</option>
+        <option>CANVA</option>
+        <option>COZINHA FUNCIONAL</option>
+        <option>SEGURANÇA CIBERNÉTICA</option>
+        <option>DECORAÇÃO DE EVENTOS</option>
+        <option>EXCEL 365</option>
+        <option>EXCEL DESCOMPLICADO</option>
+        <option>FUTURO CAMPEÃO</option>
+        <option>GANHE DINHEIRO COM A ÁREA DA BELEZA</option>
+        <option>GANHE DINHEIRO COM A ÁREA DA CONSTRUÇÃO CIVIL</option>
+        <option>GASTRONOMIA DE MÃO CHEIA</option>
+        <option>GESTÃO DE PESSOAS</option>
+        <option>I SPEAK</option>
+        <option>INFORMÁTICA EXPERIENCE</option>
+        <option>INFORMÁTICA PARA MICROEMPREENDEDOR</option>
+        <option>INTERNET</option>
+        <option>JAVA MOD I</option>
+        <option>MARKETING DIGITAL</option>
+        <option>MARKETING PESSOAL</option>
+        <option>PREPARAÇÃO PROFISSIONAL</option>
+        <option>PRIMEIRO EMPREGO</option>
+        <option>RECEPCIONISTA DE HOTEL</option>
+        <option>SAÚDE MENTAL E BEM-ESTAR EMOCIONAL</option>
+        <option>TIKTOKER</option>
+        <option>MARKETING DIGITAL - EAD</option>
+        <option>DIGITAL INFLUENCER - COMO GERAR CONTEÚDO</option>
+        <option>INTELIGÊNCIA ARTIFICIAL</option>
+        <option>CRIAÇÃO DE ARTES E DESIGN COM IA</option>
+        <option>INTENSIVO BARBEARIA PROFISSIONAL</option>
+        <option>INTENSIVO AUXILIAR DE FARMÁCIA E DROGARIA</option>
+        <option>INTENSIVO EM GESTÃO DE MÍDIAS</option>
+        <option>INTENSIVO AUXILIAR VETERINÁRIO E PETSHOP</option>
+        <option>INTENSIVO CHEF PROFISSIONAL</option>
+        <option>INTENSIVO GESTÃO PESSOAL E PROFISSIONAL</option>
+        <option>INTENSIVO MAQUIAGEM PROFISSIONAL</option>
+        <option>INTENSIVO YOUTUBER</option>
+        <option>MAQUIAGEM: DIURNA E NOTURNA</option>
+        <option>INTENSIVO MARKETING DIGITAL - BÁSICO</option>
+        <option>INTENSIVO FREE FLIGHT - INGLÊS</option>
+        <option>EU EMPREENDEDOR</option>
+
+      </select>
+
+
+      <!-- TIPO DE BOLSA -->
+
+      <select
+        id="tipo"
+        onchange="mostrarCursos()"
+        required
+      >
+
+        <option value="">
+          Tipo de Bolsa
+        </option>
+
+        <option value="profissionalizante">
+          PROFISSIONALIZANTE
+        </option>
+
+        <option value="bacharel">
+          BACHARELADO
+        </option>
+
+        <option value="licenciatura">
+          LICENCIATURA
+        </option>
+
+        <option value="tecnologo">
+          TECNÓLOGO
+        </option>
+
+        <option value="tecnico">
+          TÉCNICO
+        </option>
+
+        <option value="proeja">
+          PROEJA
+        </option>
+
+      </select>
+
+
+      <!-- SUBCURSO -->
+
+      <select
+        id="subcurso"
+        required
+      >
+
+        <option value="">
+          Selecione uma opção
+        </option>
+
+      </select>
+
+
+      <!-- BOTÃO -->
+
+      <button type="submit">
+        GARANTIR MINHA VAGA AGORA
+      </button>
+
+    </form>
+
+  </div>
+
+
+  <script>
+
+    /* =========================
+       MODAL
+    ========================= */
+
+    function fecharModal() {
+
+      const modal = document.getElementById("modalAviso");
+
+      if (modal) {
+        modal.style.display = "none";
+      }
+
+      document.body.style.overflow = "auto";
+    }
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+      const modal = document.getElementById("modalAviso");
+
+      if (modal) {
+
+        modal.style.display = "flex";
+
+        document.body.style.overflow = "hidden";
+
+      }
+
+    });
+
+
+    /* =========================
+       CURSOS
+    ========================= */
+
+    function mostrarCursos() {
+
+      const tipo = document.getElementById("tipo").value;
+
+      const sub = document.getElementById("subcurso");
+
+      sub.innerHTML =
+        "<option value=''>Selecione uma opção</option>";
+
+
+      const dados = {
+
+        profissionalizante: [
+
+          "Administração / Técnicas Administrativas",
+          "Administração / Gestão de Pessoas e Lideranças",
+          "Administração / Dicção, Desinibição e Oratória + Comunicação Assertiva",
+          "Administração / Auxiliar Administrativo e Financeiro",
+          "Administração / ASSISTENTE DE MARKETING 7",
+          "Administração / ASSISTENTE DE RH 7",
+          "Administração / ASSISTENTE FINANCEIRO",
+          "Administração / Gestão empresarial e educação financeira",
+          "Administração / Negócios",
+          "Administração / Atendimento ao Público e Vendas",
+          "Administração / Vendas",
+
+          "Tecnologia / Informática",
+          "Tecnologia / Concerto de Celulares",
+          "Tecnologia / Manutenção de Computadores",
+          "Tecnologia / Designer Gráfico",
+          "Tecnologia / Programação",
+          "Tecnologia / Projetista",
+          "Tecnologia / Marketing Digital",
+          "Tecnologia / Editor de Vídeos",
+          "Tecnologia / Excel",
+          "Tecnologia / Power BI",
+          "Tecnologia / Social Media",
+          "Tecnologia / E-commerce",
+          "Tecnologia / Fotografia",
+          "Tecnologia / Digital Influencer",
+          "Tecnologia / Canva",
+
+          "Beleza / Cabeleireiro Profissional",
+          "Beleza / Maquiagem Especilista no Olhar",
+          "Beleza / Designer de Sobrancelhas",
+          "Beleza / Extensão de Cílios",
+          "Beleza / Manicure e Pedicure",
+          "Beleza / Alongamento de Unhas",
+
+          "Moda / Corte e Costura",
+          "Moda / Modelagem",
+
+          "Gastronomia / Culinária",
+          "Gastronomia / Confeitaria",
+          "Gastronomia / Biscoitos",
+          "Gastronomia / Pizzaiolo",
+          "Gastronomia / Salgadeiro",
+          "Gastronomia / Panificação",
+          "Gastronomia / Cozinha Funcional",
+          "Gastronomia / Chef Vegano",
+          "Gastronomia / Barman e Bartender",
+
+          "Saúde / Massagem Profissional",
+          "Saúde / Atendente de Farmácia e Drogaria",
+          "Saúde / Assistente de Laboratório e Análises",
+          "Saúde / Cuidador de Idosos",
+          "Saúde / Saúde Mental e Bem-estar emocional",
+          "Saúde / Biossegurança em Saúde",
+          "Saúde / Primeiros Socorros",
+
+          "Construção Civil / Eletricista Predial e Residencial",
+          "Construção Civil / Mestre de Obras",
+          "Construção Civil / Instalação e Manutenção de Ar Condicionado",
+          "Construção Civil / NR10",
+          "Construção Civil / NR18",
+          "Construção Civil / Eletricista e Instalador Predial",
+          "Construção Civil / Reciclagem NR 06 e NR 10",
+
+          "Indústria e Mecânica / Soldador",
+          "Indústria e Mecânica / Leitura e Interpretação de Desenhos - LID",
+
+          "Idiomas / Inglês",
+          "Idiomas / Italiano",
+          "Idiomas / Libras",
+
+          "Área de Casa e Conforto / Personal Organizer",
+
+          "Turismo e Hotelaria / Camareira",
+          "Turismo e Hotelaria / Recepcionista de Hotel",
+          "Turismo e Hotelaria / Decoração de Eventos",
+          "Turismo e Hotelaria / Garçom e Maitre",
+          "Turismo e Hotelaria / Agente de Viagens",
+          "Turismo e Hotelaria / Cerimonialista",
+
+          "Área de Serviços / Gestor de Posto de Combustível"
+
+        ],
+
+
+        bacharel: [
+
+          "Administração",
+          "Ciências Contábeis",
+          "Ciências da Computação",
+          "Ciências Econômicas",
+          "Educação Física - Bacharelado",
+          "Engenharia Ambiental",
+          "Engenharia Civil",
+          "Engenharia de Computação",
+          "Engenharia de Controle e Automação",
+          "Engenharia de Produção",
+          "Engenharia de Software",
+          "Engenharia Elétrica",
+          "Engenharia Mecatrônica",
+          "Engenharia Mecânica",
+          "Sistemas de Informação",
+          "Arquitetura e Urbanismo",
+          "Agronomia"
+
+        ],
+
+
+        licenciatura: [
+
+          "Artes",
+          "Educação Especial",
+          "Geografia",
+          "História",
+          "Letras - Português e Libras",
+          "Letras - Português e Inglês",
+          "Matemática",
+          "Pedagogia",
+          "Ciências Biológicas",
+          "Educação Física - Licenciatura"
+
+        ],
+
+
+        tecnologo: [
+
+          "Análise e Desenvolvimento de Sistemas",
+          "Automação Industrial",
+          "Banco de Dados",
+          "Controle de Obras",
+          "Design Gráfico",
+          "Energias Renováveis",
+          "Estética e Cosmética",
+          "Fabricação Mecânica",
+          "Gastronomia",
+          "Gestão Ambiental",
+          "Gestão Comercial",
+          "Gestão da Produção Industrial",
+          "Gestão da Qualidade",
+          "Gestão de Recursos Humanos",
+          "Gestão Financeira",
+          "Gestão Hospitalar",
+          "Logística",
+          "Marketing",
+          "Marketing Digital",
+          "Mecatrônica Industrial",
+          "Processos Escolares",
+          "Processos Gerenciais",
+          "Redes de Computadores",
+          "Segurança no Trabalho",
+          "Segurança no Trânsito",
+          "Serviços Jurídicos"
+
+        ],
+
+
+        tecnico: [
+
+          "ASB - Auxiliar de Saúde Bucal"
+
+        ],
+
+
+        proeja: [
+
+          "Ensino Fundamental",
+          "Ensino Médio - 1º, 2º e 3º anos",
+          "Ensino Médio - 2º e 3º anos",
+          "Ensino Médio - 3º ano"
+
+        ]
+
+      };
+
+
+      if (dados[tipo]) {
+
+        dados[tipo].forEach(function (item) {
+
+          const opt = document.createElement("option");
+
+          opt.value = item;
+          opt.textContent = item;
+
+          sub.appendChild(opt);
+
+        });
+
+      }
+
+    }
+
+
+    /* =========================
+       WHATSAPP
+    ========================= */
+
+    function enviarWhatsApp(e) {
+
+      e.preventDefault();
+
+
+      const nome =
+        document.getElementById("nome").value.trim();
+
+      const whatsapp =
+        document.getElementById("whatsapp").value.trim();
+
+      const curso =
+        document.getElementById("curso").value;
+
+      const tipo =
+        document.getElementById("tipo").value;
+
+      const subcurso =
+        document.getElementById("subcurso").value;
+
+
+      const numero = "5554992713996";
+
+
+      const msg = `NOVO CADASTRO
 
 Nome: ${nome}
 WhatsApp: ${whatsapp}
@@ -390,12 +820,19 @@ Curso: ${curso}
 Tipo: ${tipo}
 Subcurso: ${subcurso}`;
 
-let url="https://wa.me/"+numero+"?text="+encodeURIComponent(msg);
 
-window.open(url,"_blank");
-}
+      const url =
+        "https://wa.me/" +
+        numero +
+        "?text=" +
+        encodeURIComponent(msg);
 
-</script>
+
+      window.open(url, "_blank");
+
+    }
+
+  </script>
 
 </body>
 </html>
