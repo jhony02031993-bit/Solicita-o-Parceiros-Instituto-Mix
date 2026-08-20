@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Instituto Mix - Oportunidades</title>
 
+<!-- Fonte moderna -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -15,7 +16,9 @@ body {
   background: #f4f4f4;
 }
 
-/* HERO */
+/* =========================
+   HERO PREMIUM
+========================= */
 .hero {
   background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
               url('https://images.unsplash.com/photo-1523580846011-d3a5bc25702b');
@@ -26,27 +29,40 @@ body {
   padding: 70px 20px;
 }
 
-.hero h1 { font-size: 30px; }
+.hero h1 {
+  font-size: 30px;
+  font-weight: 700;
+}
 
 .urgencia {
   color: #ffcc00;
   font-weight: bold;
 }
 
-/* CONTAINER */
+/* =========================
+   CONTAINER
+========================= */
 .container {
   max-width: 900px;
   margin: auto;
   padding: 20px;
   margin-top: -40px;
+  animation: fadeUp 0.8s ease;
 }
 
-/* FORM */
+/* =========================
+   FORM PREMIUM
+========================= */
 form {
   background: white;
   padding: 30px;
   border-radius: 14px;
   box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+  transition: 0.3s;
+}
+
+form:hover {
+  transform: translateY(-3px);
 }
 
 input, select {
@@ -55,9 +71,12 @@ input, select {
   margin: 10px 0;
   border-radius: 8px;
   border: 1px solid #ddd;
+  font-size: 14px;
 }
 
-/* BUTTON */
+/* =========================
+   BOTÃO PREMIUM
+========================= */
 button {
   width: 100%;
   padding: 16px;
@@ -67,47 +86,112 @@ button {
   cursor: pointer;
   font-weight: 700;
   border-radius: 10px;
+  font-size: 16px;
+  transition: 0.3s;
 }
 
-/* INFO */
+button:hover {
+  transform: scale(1.03);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+}
+
+/* =========================
+   INFO BOX
+========================= */
 .info-box {
   background: white;
   padding: 18px;
   margin-bottom: 15px;
   border-radius: 10px;
+  font-size: 14px;
   border-left: 5px solid #ff6a00;
 }
 
+/* =========================
+   ALERTA
+========================= */
 .perda {
   color:red;
   font-weight:bold;
   text-align:center;
 }
 
-/* MODAL */
+/* =========================
+   ANIMAÇÃO
+========================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 20px;
+  }
+
+  form {
+    padding: 20px;
+  }
+
+  .container {
+    margin-top: -20px;
+  }
+}
+
+/* =========================
+   MODAL (MANTIDO + MELHORADO)
+========================= */
 .modal {
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background: rgba(0,0,0,0.85);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  z-index:9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
 }
 
 .modal-box {
-  background:white;
-  padding:25px;
-  border-radius:12px;
-  max-width:650px;
+  background: white;
+  padding: 25px;
+  border-radius: 14px;
+  max-width: 600px;
+  width: 90%;
+  text-align: left;
 }
 
-/* RESPONSIVO */
-@media(max-width:600px){
-  .hero h1{font-size:20px;}
+.modal-box h2 {
+  color: #e60000;
+  text-align: center;
 }
 
+.modal-box p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.modal-box button {
+  margin-top: 15px;
+  width: 100%;
+  padding: 14px;
+  background: #e60000;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+}
 </style>
 </head>
 
