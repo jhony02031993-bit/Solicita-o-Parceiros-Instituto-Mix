@@ -5,35 +5,35 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Instituto Mix - Oportunidades</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
+
 body {
   margin: 0;
-  font-family: Arial;
+  font-family: 'Poppins', sans-serif;
   background: #f4f4f4;
 }
 
-/* =========================
-   HERO
-========================= */
+/* HERO */
 .hero {
-  background: linear-gradient(135deg, #ff6a00, #ff9900);
+  background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+              url('https://images.unsplash.com/photo-1523580846011-d3a5bc25702b');
+  background-size: cover;
+  background-position: center;
   color: white;
   text-align: center;
-  padding: 50px 20px;
+  padding: 70px 20px;
 }
 
-.hero h1 {
-  font-size: 28px;
-}
+.hero h1 { font-size: 30px; }
 
 .urgencia {
-  color: yellow;
+  color: #ffcc00;
   font-weight: bold;
 }
 
-/* =========================
-   CONTAINER
-========================= */
+/* CONTAINER */
 .container {
   max-width: 900px;
   margin: auto;
@@ -41,48 +41,41 @@ body {
   margin-top: -40px;
 }
 
-/* =========================
-   FORM
-========================= */
+/* FORM */
 form {
   background: white;
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.12);
 }
 
 input, select {
   width: 100%;
   padding: 12px;
   margin: 10px 0;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+  border-radius: 8px;
+  border: 1px solid #ddd;
 }
 
+/* BUTTON */
 button {
   width: 100%;
   padding: 16px;
-  background: #e60000;
+  background: linear-gradient(135deg, #ff0000, #ff4d4d);
   color: white;
   border: none;
   cursor: pointer;
-  font-weight: bold;
-  border-radius: 6px;
-  font-size: 16px;
+  font-weight: 700;
+  border-radius: 10px;
 }
 
-button:hover {
-  background: #cc0000;
-}
-
-.hidden { display:none; }
-
+/* INFO */
 .info-box {
-  background:#fff;
-  padding:15px;
-  margin-bottom:15px;
-  border-radius:8px;
-  font-size:14px;
+  background: white;
+  padding: 18px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border-left: 5px solid #ff6a00;
 }
 
 .perda {
@@ -91,122 +84,71 @@ button:hover {
   text-align:center;
 }
 
-/* =========================
-   MODAL (MENU SUSPENSO)
-========================= */
+/* MODAL */
 .modal {
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   background: rgba(0,0,0,0.85);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 99999;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
 }
 
 .modal-box {
-  background: white;
-  padding: 25px;
-  border-radius: 12px;
-  max-width: 600px;
-  width: 90%;
-  text-align: left;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+  background:white;
+  padding:25px;
+  border-radius:12px;
+  max-width:650px;
 }
 
-.modal-box h2 {
-  color: #e60000;
-  text-align: center;
+/* RESPONSIVO */
+@media(max-width:600px){
+  .hero h1{font-size:20px;}
 }
 
-.modal-box p {
-  font-size: 14px;
-  color: #333;
-  line-height: 1.5;
-}
-
-.modal-box ul {
-  padding-left: 18px;
-}
-
-.modal-box button {
-  margin-top: 15px;
-  width: 100%;
-  padding: 14px;
-  background: #e60000;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.modal-box button:hover {
-  background: #cc0000;
-}
 </style>
 </head>
 
 <body>
 
-<!-- =========================
-     MODAL DE ENTRADA
-========================= -->
+<!-- MODAL -->
 <div id="modalAviso" class="modal">
   <div class="modal-box">
-
     <h2>⚠️ AVISO IMPORTANTE</h2>
 
-    <p>
-      Esta é uma <strong>ação de inclusão educacional</strong>, desenvolvida com o objetivo de ampliar o acesso à qualificação profissional e oportunidades de formação para a comunidade.
-    </p>
+    <p>Esta é uma ação de inclusão educacional...</p>
 
-    <p>
-      A iniciativa é <strong>gratuita</strong> devido a uma parceria institucional que viabiliza o custeio das vagas, permitindo que mais pessoas possam participar sem custo.
-    </p>
-
-    <p><strong>• Este acesso é exclusivo para moradores de Flores da Cunha – RS</strong></p>
-    <p><strong>• Não se trata de golpe</strong>. Trata-se de uma ação institucional e verificada</p>
-    <p><strong>• Oferta EXCLUSIVA para ações com prazos determinados!</strong></p>
-    <p><strong>• Os dados informados não são enviados para plataformas ou bancos de dados</strong>, sendo encaminhados diretamente para atendimento via <strong>WhatsApp</strong></p>
+    <p>✔ Gratuito por parceria institucional</p>
+    <p>✔ Exclusivo Flores da Cunha - RS</p>
+    <p>✔ Dados apenas via WhatsApp</p>
 
     <button onclick="fecharModal()">CIENTE</button>
-
   </div>
 </div>
 
-<!-- =========================
-     CONTEÚDO ORIGINAL
-========================= -->
-
+<!-- HERO -->
 <div class="hero">
-  <h1>GANHE UM CURSO GRATUITO + POSSIBILIDADE DE BOLSA DE ATÉ 100%</h1>
-  <p>Vagas limitadas • Apenas para selecionados</p>
-  <p class="urgencia">⏰ Inscrições encerram em 48 horas após cadastramento</p>
+  <h1>CURSOS GRATUITOS + BOLSAS DE ESTUDO</h1>
+  <p class="urgencia">Inscrições em 48h</p>
 </div>
 
 <div class="container">
 
 <div class="info-box">
-⭐⭐⭐⭐⭐ Mais de 2.000 alunos já GANHARAM<br>
-✔ Cursos reconhecidos<br>
+✔ Mais de 2.000 alunos<br>
 ✔ Certificado válido<br>
-✔ Método presencial ou EAD
+✔ Presencial ou EAD
 </div>
 
 <form onsubmit="enviarWhatsApp(event)">
 
-<input id="nome" type="text" placeholder="NOME COMPLETO" required>
-<input id="whatsapp" type="text" placeholder="WhatsApp com DDD (ex: 54999999999)" required>
+<input id="nome" placeholder="Nome" required>
+<input id="whatsapp" placeholder="WhatsApp" required>
 
-<label>CURSO LIVRE E GRATUITO</label>
 <select id="curso" required>
-<option value="">Selecione</option>
-
-<optgroup label="Cursos Livres">
+<option value="">Curso Livre</option>
 <option>ADMINISTRAÇÃO EXPERT</option>
 <option>ATENDIMENTO AO CLIENTE</option>
 <option>CAMAREIRA</option>
@@ -250,35 +192,22 @@ button:hover {
 <option>INTENSIVO FREE FLIGHT - INGLÊS</option>
 <option>EU EMPREENDEDOR</option>
 </optgroup>
-
+  
 </select>
 
-<label>SE EU GANHAR UMA BOLSA EU FARIA:</label>
 <select id="tipo" onchange="mostrarCursos()" required>
-<option value="">Selecione</option>
+<option value="">Tipo de Bolsa</option>
+<option value="profissionalizante">PROFISSIONALIZANTE</option>
 <option value="bacharel">BACHARELADO</option>
 <option value="licenciatura">LICENCIATURA</option>
 <option value="tecnologo">TECNÓLOGO</option>
 <option value="tecnico">TÉCNICO</option>
 <option value="proeja">PROEJA</option>
-<option value="profissionalizante">PROFISSIONALIZANTE</option>
 </select>
 
-<select id="subcurso" class="hidden"></select>
+<select id="subcurso"></select>
 
-<div>
-✔ Curso gratuito garantido<br>
-✔ Possibilidade de bolsa até 100%<br>
-✔ Vagas limitadas
-</div>
-
-<p class="perda">⚠️ Faça agora inscrição para GARANTIR vaga!</p>
-
-<button type="submit">QUERO GARANTIR MINHA VAGA AGORA</button>
-
-<p style="font-size:12px;text-align:center;">
-Leva menos de 30 segundos • Fácil e Prático
-</p>
+<button type="submit">QUERO MINHA VAGA</button>
 
 </form>
 
@@ -286,67 +215,150 @@ Leva menos de 30 segundos • Fácil e Prático
 
 <script>
 
-/* =========================
-   MODAL CONTROL
-========================= */
-
-function fecharModal() {
-  document.getElementById("modalAviso").style.display = "none";
-  document.body.style.overflow = "auto";
-  localStorage.setItem("aceitouAviso", "sim");
+function fecharModal(){
+  document.getElementById("modalAviso").style.display="none";
 }
 
-window.onload = function() {
-  if(localStorage.getItem("aceitouAviso") === "sim") {
-    document.getElementById("modalAviso").style.display = "none";
-  } else {
-    document.body.style.overflow = "hidden";
-  }
-};
-
 /* =========================
-   CURSOS DINÂMICOS
+   LISTAS COMPLETAS
 ========================= */
 
-function mostrarCursos() {
+function mostrarCursos(){
 
-let tipo = document.getElementById("tipo").value;
-let sub = document.getElementById("subcurso");
+let tipo=document.getElementById("tipo").value;
+let sub=document.getElementById("subcurso");
 
-sub.innerHTML = "";
-sub.classList.remove("hidden");
+sub.innerHTML="";
 
-let dados = {
+let dados={
 
-bacharel: ["Administração","Ciências Contábeis","Ciências da Computação","Ciências Econômicas","Educação Física - Bacharelado","Engenharia Ambiental","Engenharia Civil","Engenharia de Computação","Engenharia de Controle e Automação","Engenharia de Produção","Engenharia de Software","Engenharia Elétrica","Engenharia Mecatrônica","Engenharia Mecânica","Sistemas de Informação","Arquitetura e Urbanismo","Agronomia"],
+/* ================= PROFISSIONALIZANTE ================= */
+profissionalizante:[
+"Administração / Técnicas Administrativas",
+"Administração / Gestão de Pessoas e Lideranças",
+"Administração / Dicção, Desinibição e Oratória + Comunicação Assertiva",
+"Administração / Auxiliar Administrativo e Financeiro",
+"Administração / ASSISTENTE DE MARKETING 7",
+"Administração / ASSISTENTE DE RH 7",
+"Administração / ASSISTENTE FINANCEIRO",
+"Administração / Gestão empresarial e educação financeira",
+"Administração / Negócios",
+"Administração / Atendimento ao Público e Vendas",
+"Administração / Vendas",
+"Tecnologia / Informática",
+"Tecnologia / Concerto de Celulares",
+"Tecnologia / Manutenção de Computadores",
+"Tecnologia / Designer Gráfico",
+"Tecnologia / Programação",
+"Tecnologia / Projetista",
+"Tecnologia / Marketing Digital",
+"Tecnologia / Editor de Vídeos",
+"Tecnologia / Excel",
+"Tecnologia / Power BI",
+"Tecnologia / Social Media",
+"Tecnologia / E-commerce",
+"Tecnologia / Fotografia",
+"Tecnologia / Digital Influencer",
+"Tecnologia / Canva",
+"Beleza / Cabeleireiro Profissional",
+"Beleza / Maquiagem Especilista no Olhar",
+"Beleza / Designer de Sobrancelhas",
+"Beleza / Extensão de Cílios",
+"Beleza / Manicure e Pedicure",
+"Beleza / Alongamento de Unhas",
+"Moda / Corte e Costura",
+"Moda / Modelagem",
+"Gastronomia / Culinária",
+"Gastronomia / Confeitaria",
+"Gastronomia / Biscoitos",
+"Gastronomia / Pizzaiolo",
+"Gastronomia / Salgadeiro",
+"Gastronomia / Panificação",
+"Gastronomia / Cozinha Funcional",
+"Gastronomia / Chef Vegano",
+"Gastronomia / Barman e Bartender",
+"Saúde / Massagem Profissional",
+"Saúde / Atendente de Farmácia e Drogaria",
+"Saúde / Assistente de Laboratório e Análises",
+"Saúde / Cuidador de Idosos",
+"Saúde / Saúde Mental e Bem-estar emocional",
+"Saúde / Biossegurança em Saúde",
+"Saúde / Primeiros Socorros",
+"Construção Civil / Eletricista Predial e Residencial",
+"Construção Civil / Mestre de Obras",
+"Construção Civil / Instalação e Manutenção de Ar Condicionado",
+"Construção Civil / NR10",
+"Construção Civil / NR18",
+"Construção Civil / Eletricista e Instalador Predial",
+"Construção Civil / Reciclagem NR 06 e NR 10",
+"Indústria e Mecânica / Soldador",
+"Indústria e Mecânica / Leitura e Interpretação de Desenhos - LID",
+"Idiomas / Inglês",
+"Idiomas / Italiano",
+"Idiomas / Libras",
+"Área de Casa e Conforto / Personal Organizer",
+"Turismo e Hotelaria / Camareira",
+"Turismo e Hotelaria / Recepcionista de Hotel",
+"Turismo e Hotelaria / Decoração de Eventos",
+"Turismo e Hotelaria / Garçom e Maitre",
+"Turismo e Hotelaria / Agente de Viagens",
+"Turismo e Hotelaria / Cerimonialista",
+"Área de Serviços / Gestor de Posto de Combustível"
+],
 
-licenciatura: ["Artes","Educação Especial","Geografia","História","Letras - Português e Inglês","Letras - Português e Libras","Matemática","Pedagogia","Ciências Biológicas","Educação Física - Licenciatura"],
+/* ================= BACHARELADO ================= */
+bacharel:[
+"Administração","Ciências Contábeis","Ciências da Computação","Ciências Econômicas",
+"Educação Física - Bacharelado","Engenharia Ambiental","Engenharia Civil",
+"Engenharia de Computação","Engenharia de Controle e Automação","Engenharia de Produção",
+"Engenharia de Software","Engenharia Elétrica","Engenharia Mecatrônica","Engenharia Mecânica",
+"Sistemas de Informação","Arquitetura e Urbanismo","Agronomia"
+],
 
-tecnologo: ["Análise e Desenvolvimento de Sistemas","Automação Industrial","Banco de Dados","Controle de Obras","Design Gráfico","Energias Renováveis","Estética e Cosmética","Fabricação Mecânica","Gastronomia","Gestão Ambiental","Gestão Comercial","Gestão da Produção Industrial","Gestão da Qualidade","Gestão de RH","Gestão Financeira","Gestão Hospitalar","Logística","Marketing","Marketing Digital","Mecatrônica Industrial","Processos Escolares","Processos Gerenciais","Redes de Computadores","Segurança no Trabalho","Segurança no Trânsito","Serviços Jurídicos"],
+/* ================= LICENCIATURA ================= */
+licenciatura:[
+"Artes","Educação Especial","Geografia","História",
+"Letras - Português e Libras","Letras - Português e Inglês",
+"Matemática","Pedagogia","Ciências Biológicas","Educação Física - Licenciatura"
+],
 
-tecnico: ["ASB - Auxiliar de Saúde Bucal"],
+/* ================= TECNÓLOGO ================= */
+tecnologo:[
+"Análise e Desenvolvimento de Sistemas","Automação Industrial","Banco de Dados",
+"Controle de Obras","Design Gráfico","Energias Renováveis","Estética e Cosmética",
+"Fabricação Mecânica","Gastronomia","Gestão Ambiental","Gestão Comercial",
+"Gestão da Produção Industrial","Gestão da Qualidade","Gestão de Recursos Humanos",
+"Gestão Financeira","Gestão Hospitalar","Logística","Marketing","Marketing Digital",
+"Mecatrônica Industrial","Processos Escolares","Processos Gerenciais","Redes de Computadores",
+"Segurança no Trabalho","Segurança no Trânsito","Serviços Jurídicos"
+],
 
-proeja: ["Ensino Fundamental","Ensino Médio - 1º, 2º e 3º anos","Ensino Médio - 2º e 3º anos","Ensino Médio - 3º ano"],
+/* ================= TÉCNICO ================= */
+tecnico:[
+"ASB - Auxiliar de Saúde Bucal"
+],
 
-profissionalizante: ["Administração / Gestão empresarial e educação financeira","Administração / Negócios","Administração / Atendimento ao Público e Vendas","Administração / Vendas","Tecnologia / Informática","Tecnologia / Concerto de Celulares","Tecnologia / Manutenção de Computadores","Tecnologia / Designer Gráfico","Tecnologia / Programação","Tecnologia / Projetista","Tecnologia / Marketing Digital","Tecnologia / Editor de Vídeos","Tecnologia / Excel","Tecnologia / Power BI","Tecnologia / Social Media","Tecnologia / E-commerce","Tecnologia / Fotografia","Tecnologia / Digital Influencer","Tecnologia / Canva","Beleza / Cabeleireiro Profissional","Beleza / Maquiagem Especialista no Olhar","Beleza / Designer de Sobrancelhas","Beleza / Extensão de Cílios","Beleza / Manicure e Pedicure","Beleza / Alongamento de Unhas","Moda / Corte e Costura","Moda / Modelagem","Gastronomia / Culinária","Gastronomia / Confeitaria","Gastronomia / Biscoitos","Gastronomia / Pizzaiolo","Gastronomia / Salgadeiro","Gastronomia / Panificação","Gastronomia / Cozinha Funcional","Gastronomia / Chef Vegano","Gastronomia / Barman e Bartender","Saúde / Massagem Profissional","Saúde / Atendente de Farmácia e Drogaria","Saúde / Assistente de Laboratório e Análises","Saúde / Cuidador de Idosos","Saúde / Saúde Mental e Bem-estar emocional","Saúde / Biossegurança em Saúde","Saúde / Primeiros Socorros","Construção Civil / Eletricista Predial e Residencial","Construção Civil / Mestre de Obras","Construção Civil / Instalação e Manutenção de Ar Condicionado","Construção Civil / NR10","Construção Civil / NR18","Construção Civil / Eletricista e Instalador Predial","Construção Civil / Reciclagem NR 06 e NR 10","Indústria e Mecânica / Soldador","Indústria e Mecânica / Leitura e Interpretação de Desenhos - LID","Idiomas / Inglês","Idiomas / Italiano","Idiomas / Libras","Área de Casa e Conforto / Personal Organizer","Turismo e Hotelaria / Camareira","Turismo e Hotelaria / Recepcionista de Hotel","Turismo e Hotelaria / Decoração de Eventos","Turismo e Hotelaria / Garçom e Maitre","Turismo e Hotelaria / Agente de Viagens","Turismo e Hotelaria / Cerimonialista","Área de Serviços / Gestor de Posto de Combustível"]
+/* ================= PROEJA ================= */
+proeja:[
+"Ensino Fundamental",
+"Ensino Médio - 1º, 2º e 3º anos",
+"Ensino Médio - 2º e 3º anos",
+"Ensino Médio - 3º ano"
+]
 
 };
 
 if(dados[tipo]){
-dados[tipo].forEach(item=>{
+dados[tipo].forEach(i=>{
 let opt=document.createElement("option");
-opt.text=item;
+opt.text=i;
 sub.add(opt);
 });
 }
 
-sub.scrollIntoView({behavior:"smooth"});
 }
 
-/* =========================
-   WHATSAPP
-========================= */
-
+/* ================= WHATSAPP ================= */
 function enviarWhatsApp(e){
 e.preventDefault();
 
@@ -358,15 +370,15 @@ let subcurso=document.getElementById("subcurso").value;
 
 let numero="5554992713996";
 
-let msg=`🚀 NOVO CADASTRO - INSTITUTO MIX
+let msg=`NOVO CADASTRO
 
 Nome: ${nome}
 WhatsApp: ${whatsapp}
-Curso Livre: ${curso}
-Bolsa: ${tipo}
-Interesse: ${subcurso}`;
+Curso: ${curso}
+Tipo: ${tipo}
+Subcurso: ${subcurso}`;
 
-let url=`https://wa.me/${numero}?text=${encodeURIComponent(msg)}`;
+let url="https://wa.me/"+numero+"?text="+encodeURIComponent(msg);
 
 window.open(url,"_blank");
 }
