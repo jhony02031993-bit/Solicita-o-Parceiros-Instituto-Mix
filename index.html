@@ -19,53 +19,92 @@ body {
   padding: 50px 20px;
 }
 
+.hero h1 {
+  font-size: 28px;
+}
+
+.urgencia {
+  color: yellow;
+  font-weight: bold;
+}
+
 .container {
   max-width: 900px;
   margin: auto;
   padding: 20px;
+  margin-top: -40px;
 }
 
 form {
   background: white;
-  padding: 20px;
+  padding: 25px;
   border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 input, select {
   width: 100%;
   padding: 12px;
   margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
 }
 
 button {
   width: 100%;
-  padding: 15px;
+  padding: 16px;
   background: #e60000;
   color: white;
   border: none;
   cursor: pointer;
   font-weight: bold;
   border-radius: 6px;
+  font-size: 16px;
+}
+
+button:hover {
+  background: #cc0000;
 }
 
 .hidden { display:none; }
+
+.info-box {
+  background:#fff;
+  padding:15px;
+  margin-bottom:15px;
+  border-radius:8px;
+  font-size:14px;
+}
+
+.perda {
+  color:red;
+  font-weight:bold;
+  text-align:center;
+}
 </style>
 </head>
 
 <body>
 
 <div class="hero">
-  <h1>Transforme seu futuro profissional com qualificações!</h1>
-  <p>Escolha seu curso e receba sua oportunidade 100% GRATUITA, sem enrolação, sem meio termo, simples e prático.</p>
-  <p>SOMENTE PESSOAS DE FLORES DA CUNHA E DENTRO DO PRAZO TERÃO DISPONIBILIDADE</p>
+  <h1>GANHE UM CURSO GRATUITO + CHANCE DE BOLSA DE ATÉ 100%</h1>
+  <p>Vagas limitadas • Apenas para selecionados</p>
+  <p class="urgencia">⏰ Inscrições encerram em 48 horas</p>
 </div>
 
 <div class="container">
 
+<div class="info-box">
+⭐⭐⭐⭐⭐ Mais de 5.000 alunos já participaram<br>
+✔ Cursos reconhecidos<br>
+✔ Certificado válido<br>
+✔ Método presencial com apoio
+</div>
+
 <form onsubmit="enviarWhatsApp(event)">
 
 <input id="nome" type="text" placeholder="NOME COMPLETO" required>
-<input id="whatsapp" type="text" placeholder="CONTATO WHATSAPP" required>
+<input id="whatsapp" type="text" placeholder="WhatsApp com DDD (ex: 54999999999)" required>
 
 <label>CURSO LIVRE E GRATUITO</label>
 <select id="curso" required>
@@ -115,6 +154,7 @@ button {
 <option>INTENSIVO FREE FLIGHT - INGLÊS</option>
 <option>EU EMPREENDEDOR</option>
 </optgroup>
+
 </select>
 
 <label>SE EU GANHAR UMA BOLSA EU FARIA:</label>
@@ -130,7 +170,19 @@ button {
 
 <select id="subcurso" class="hidden"></select>
 
-<button type="submit">QUERO MINHA VAGA</button>
+<div>
+✔ Curso gratuito garantido<br>
+✔ Possibilidade de bolsa até 100%<br>
+✔ Vagas limitadas
+</div>
+
+<p class="perda">⚠️ Quem não se inscrever agora pode perder a vaga</p>
+
+<button type="submit">QUERO GARANTIR MINHA VAGA AGORA</button>
+
+<p style="font-size:12px;text-align:center;">
+Leva menos de 30 segundos • Sem compromisso
+</p>
 
 </form>
 
@@ -148,106 +200,17 @@ sub.classList.remove("hidden");
 
 let dados = {
 
-bacharel: [
-"Administração","Ciências Contábeis","Ciências da Computação","Ciências Econômicas",
-"Educação Física - Bacharelado","Engenharia Ambiental","Engenharia Civil",
-"Engenharia de Computação","Engenharia de Controle e Automação","Engenharia de Produção",
-"Engenharia de Software","Engenharia Elétrica","Engenharia Mecatrônica",
-"Engenharia Mecânica","Sistemas de Informação","Arquitetura e Urbanismo","Agronomia"
-],
+bacharel: ["Administração","Ciências Contábeis","Ciências da Computação","Ciências Econômicas","Educação Física - Bacharelado","Engenharia Ambiental","Engenharia Civil","Engenharia de Computação","Engenharia de Controle e Automação","Engenharia de Produção","Engenharia de Software","Engenharia Elétrica","Engenharia Mecatrônica","Engenharia Mecânica","Sistemas de Informação","Arquitetura e Urbanismo","Agronomia"],
 
-licenciatura: [
-"Artes","Educação Especial","Geografia","História",
-"Letras - Português e Inglês","Letras - Português e Libras",
-"Matemática","Pedagogia","Ciências Biológicas","Educação Física - Licenciatura"
-],
+licenciatura: ["Artes","Educação Especial","Geografia","História","Letras - Português e Inglês","Letras - Português e Libras","Matemática","Pedagogia","Ciências Biológicas","Educação Física - Licenciatura"],
 
-tecnologo: [
-"Análise e Desenvolvimento de Sistemas","Automação Industrial","Banco de Dados",
-"Controle de Obras","Design Gráfico","Energias Renováveis","Estética e Cosmética",
-"Fabricação Mecânica","Gastronomia","Gestão Ambiental","Gestão Comercial",
-"Gestão da Produção Industrial","Gestão da Qualidade","Gestão de RH",
-"Gestão Financeira","Gestão Hospitalar","Logística","Marketing","Marketing Digital",
-"Mecatrônica Industrial","Processos Escolares","Processos Gerenciais",
-"Redes de Computadores","Segurança no Trabalho","Segurança no Trânsito","Serviços Jurídicos"
-],
+tecnologo: ["Análise e Desenvolvimento de Sistemas","Automação Industrial","Banco de Dados","Controle de Obras","Design Gráfico","Energias Renováveis","Estética e Cosmética","Fabricação Mecânica","Gastronomia","Gestão Ambiental","Gestão Comercial","Gestão da Produção Industrial","Gestão da Qualidade","Gestão de RH","Gestão Financeira","Gestão Hospitalar","Logística","Marketing","Marketing Digital","Mecatrônica Industrial","Processos Escolares","Processos Gerenciais","Redes de Computadores","Segurança no Trabalho","Segurança no Trânsito","Serviços Jurídicos"],
 
-tecnico: [
-"ASB - Auxiliar de Saúde Bucal"
-],
+tecnico: ["ASB - Auxiliar de Saúde Bucal"],
 
-proeja: [
-"Ensino Fundamental",
-"Ensino Médio - 1º, 2º e 3º anos",
-"Ensino Médio - 2º e 3º anos",
-"Ensino Médio - 3º ano"
-],
+proeja: ["Ensino Fundamental","Ensino Médio - 1º, 2º e 3º anos","Ensino Médio - 2º e 3º anos","Ensino Médio - 3º ano"],
 
-profissionalizante: [
-"Administração / Gestão empresarial e educação financeira",
-"Administração / Negócios",
-"Administração / Atendimento ao Público e Vendas",
-"Administração / Vendas",
-"Tecnologia / Informática",
-"Tecnologia / Concerto de Celulares",
-"Tecnologia / Manutenção de Computadores",
-"Tecnologia / Designer Gráfico",
-"Tecnologia / Programação",
-"Tecnologia / Projetista",
-"Tecnologia / Marketing Digital",
-"Tecnologia / Editor de Vídeos",
-"Tecnologia / Excel",
-"Tecnologia / Power BI",
-"Tecnologia / Social Media",
-"Tecnologia / E-commerce",
-"Tecnologia / Fotografia",
-"Tecnologia / Digital Influencer",
-"Tecnologia / Canva",
-"Beleza / Cabeleireiro Profissional",
-"Beleza / Maquiagem Especialista no Olhar",
-"Beleza / Designer de Sobrancelhas",
-"Beleza / Extensão de Cílios",
-"Beleza / Manicure e Pedicure",
-"Beleza / Alongamento de Unhas",
-"Moda / Corte e Costura",
-"Moda / Modelagem",
-"Gastronomia / Culinária",
-"Gastronomia / Confeitaria",
-"Gastronomia / Biscoitos",
-"Gastronomia / Pizzaiolo",
-"Gastronomia / Salgadeiro",
-"Gastronomia / Panificação",
-"Gastronomia / Cozinha Funcional",
-"Gastronomia / Chef Vegano",
-"Gastronomia / Barman e Bartender",
-"Saúde / Massagem Profissional",
-"Saúde / Atendente de Farmácia e Drogaria",
-"Saúde / Assistente de Laboratório e Análises",
-"Saúde / Cuidador de Idosos",
-"Saúde / Saúde Mental e Bem-estar emocional",
-"Saúde / Biossegurança em Saúde",
-"Saúde / Primeiros Socorros",
-"Construção Civil / Eletricista Predial e Residencial",
-"Construção Civil / Mestre de Obras",
-"Construção Civil / Instalação e Manutenção de Ar Condicionado",
-"Construção Civil / NR10",
-"Construção Civil / NR18",
-"Construção Civil / Eletricista e Instalador Predial",
-"Construção Civil / Reciclagem NR 06 e NR 10",
-"Indústria e Mecânica / Soldador",
-"Indústria e Mecânica / Leitura e Interpretação de Desenhos - LID",
-"Idiomas / Inglês",
-"Idiomas / Italiano",
-"Idiomas / Libras",
-"Área de Casa e Conforto / Personal Organizer",
-"Turismo e Hotelaria / Camareira",
-"Turismo e Hotelaria / Recepcionista de Hotel",
-"Turismo e Hotelaria / Decoração de Eventos",
-"Turismo e Hotelaria / Garçom e Maitre",
-"Turismo e Hotelaria / Agente de Viagens",
-"Turismo e Hotelaria / Cerimonialista",
-"Área de Serviços / Gestor de Posto de Combustível"
-]
+profissionalizante: ["Administração / Gestão empresarial e educação financeira","Administração / Negócios","Administração / Atendimento ao Público e Vendas","Administração / Vendas","Tecnologia / Informática","Tecnologia / Concerto de Celulares","Tecnologia / Manutenção de Computadores","Tecnologia / Designer Gráfico","Tecnologia / Programação","Tecnologia / Projetista","Tecnologia / Marketing Digital","Tecnologia / Editor de Vídeos","Tecnologia / Excel","Tecnologia / Power BI","Tecnologia / Social Media","Tecnologia / E-commerce","Tecnologia / Fotografia","Tecnologia / Digital Influencer","Tecnologia / Canva","Beleza / Cabeleireiro Profissional","Beleza / Maquiagem Especialista no Olhar","Beleza / Designer de Sobrancelhas","Beleza / Extensão de Cílios","Beleza / Manicure e Pedicure","Beleza / Alongamento de Unhas","Moda / Corte e Costura","Moda / Modelagem","Gastronomia / Culinária","Gastronomia / Confeitaria","Gastronomia / Biscoitos","Gastronomia / Pizzaiolo","Gastronomia / Salgadeiro","Gastronomia / Panificação","Gastronomia / Cozinha Funcional","Gastronomia / Chef Vegano","Gastronomia / Barman e Bartender","Saúde / Massagem Profissional","Saúde / Atendente de Farmácia e Drogaria","Saúde / Assistente de Laboratório e Análises","Saúde / Cuidador de Idosos","Saúde / Saúde Mental e Bem-estar emocional","Saúde / Biossegurança em Saúde","Saúde / Primeiros Socorros","Construção Civil / Eletricista Predial e Residencial","Construção Civil / Mestre de Obras","Construção Civil / Instalação e Manutenção de Ar Condicionado","Construção Civil / NR10","Construção Civil / NR18","Construção Civil / Eletricista e Instalador Predial","Construção Civil / Reciclagem NR 06 e NR 10","Indústria e Mecânica / Soldador","Indústria e Mecânica / Leitura e Interpretação de Desenhos - LID","Idiomas / Inglês","Idiomas / Italiano","Idiomas / Libras","Área de Casa e Conforto / Personal Organizer","Turismo e Hotelaria / Camareira","Turismo e Hotelaria / Recepcionista de Hotel","Turismo e Hotelaria / Decoração de Eventos","Turismo e Hotelaria / Garçom e Maitre","Turismo e Hotelaria / Agente de Viagens","Turismo e Hotelaria / Cerimonialista","Área de Serviços / Gestor de Posto de Combustível"]
 
 };
 
@@ -259,6 +222,7 @@ sub.add(opt);
 });
 }
 
+sub.scrollIntoView({behavior:"smooth"});
 }
 
 function enviarWhatsApp(e){
